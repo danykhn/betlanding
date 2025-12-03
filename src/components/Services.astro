@@ -1,0 +1,161 @@
+---
+import ServiceCard from './ServiceCard.astro';
+---
+
+<section id="servicios" class="relative py-24 overflow-hidden">
+  <!-- Parallax background elements -->
+  <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl parallax-element" data-speed="0.3"></div>
+  <div class="absolute bottom-20 right-10 w-72 h-72 bg-pink-500/5 rounded-full blur-3xl parallax-element" data-speed="0.5"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 transition-all duration-1000 taos:opacity-0 taos:translate-y-[150px]" data-taos-offset="400">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Nuestros <span class="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Servicios</span>
+      </h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        Adaptables a tu operación, puedes contratarlos juntos o separados
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ServiceCard
+        icon="🎰"
+        title="Casino Online y Back Office"
+        description="Slots, apuestas deportivas, casino en vivo 24 HS bajo un diseño novedoso e intuitivo. Con un BACK OFFICE de reportes minuto a minuto."
+        features={[
+          'Llave en mano listo para operar',
+          'Soporte 24/7',
+          'Asesoramiento completo'
+        ]}
+        delay={0}
+        animationType={0}
+      />
+
+      <ServiceCard
+        icon="📞"
+        title="Call Center"
+        description="Creación de call center exclusivo para tu operación, capacitado en captación de usuarios, retención y detección de fraude."
+        features={[
+          'Cobertura Latinoamérica',
+          'Disponibilidad 24/7',
+          'Personal capacitado'
+        ]}
+        delay={1}
+        animationType={1}
+      />
+
+      <ServiceCard
+        icon="📧"
+        title="Marketing en Igaming"
+        description="Plataforma de email marketing, WhatsApp MKT automatizado anti-spam para la industria de igaming."
+        features={[
+          'Estrategia y diseño',
+          'Automatizado',
+          'Asesoramiento'
+        ]}
+        delay={2}
+        animationType={2}
+      />
+
+      <ServiceCard
+        icon="🎮"
+        title="Creación de Juegos de Casino"
+        description="Creación de juegos desde slots, ruleta, juegos en vivo, crash, apuesta de choque. Si lo puedes imaginar, lo podemos crear."
+        features={[
+          'Certificación',
+          'Diseño y Programación',
+          'Soporte continuo'
+        ]}
+        delay={3}
+        animationType={3}
+      />
+
+      <ServiceCard
+        icon="🔌"
+        title="Integraciones"
+        description="Integramos proveedores de la industria como también métodos de pagos de forma rápida y segura."
+        features={[
+          'Rapidez',
+          'Seguridad',
+          'Múltiples proveedores'
+        ]}
+        delay={4}
+        animationType={4}
+      />
+
+      <ServiceCard
+        icon="🚀"
+        title="Solución Integral"
+        description="Los servicios completos para tu operación. Puesta en marcha en 5 días, entrega final en 45 días para empezar a operar."
+        features={[
+          'Llave en mano global',
+          'Soporte completo',
+          'Implementación rápida'
+        ]}
+        delay={5}
+        animationType={5}
+      />
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-20 text-center">
+      <div class="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-3xl p-12 border border-purple-500/30 backdrop-blur-sm">
+        <h3 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Listo para empezar tu operación de casino online?
+        </h3>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Contactános hoy y comienza tu proyecto con el mejor equipo del mercado
+        </p>
+        <a href="#contacto" class="inline-block px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105">
+          Hagamos Negocios
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+</style>
+
+<script>
+  // Parallax effect for service section
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.parallax-element');
+    
+    parallaxElements.forEach((element) => {
+      const speed = parseFloat((element as HTMLElement).dataset.speed || '0.5');
+      const yPos = -(scrolled * speed);
+      (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
+    });
+  });
+
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.service-card').forEach((card) => {
+    observer.observe(card);
+  });
+</script>

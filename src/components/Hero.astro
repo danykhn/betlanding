@@ -1,0 +1,138 @@
+---
+---
+
+<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background gradients with parallax -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="parallax-bg absolute top-0 -left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"></div>
+    <div class="parallax-bg absolute bottom-0 -right-1/4 w-96 h-96 bg-pink-500/30 rounded-full blur-3xl" data-speed="0.3"></div>
+    <div class="parallax-bg absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" data-speed="0.5"></div>
+  </div>
+
+  <!-- Animated grid background -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center max-w-5xl mx-auto">
+      <div class="transition-all duration-1000 taos:opacity-0 taos:translate-y-[-200px]" data-taos-offset="400">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          Tu llave de <span class="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent animate-gradient">éxito</span> al mundo del
+          <span class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">igaming</span>
+        </h1>
+      </div>
+      
+      <div class="transition-all duration-1000 taos:opacity-0 taos:-translate-x-[200px]" data-taos-offset="400" data-taos-delay="200">
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Desarrollamos software de casino online con una imagen innovadora, divertida, intuitiva y muy rápida. 
+          Integrando los mejores proveedores de juegos del mundo.
+        </p>
+      </div>
+
+      <div class="transition-all duration-1000 taos:opacity-0 taos:translate-x-[200px]" data-taos-offset="400" data-taos-delay="400">
+        <p class="text-lg text-gray-400 mb-12">
+          Casino en vivo • Apuestas Deportivas • Slots • Póker • Soluciones de Marketing • Informes en tiempo real
+        </p>
+      </div>
+
+      <div class="transition-all duration-1000 taos:opacity-0 taos:scale-[0.6] flex flex-col sm:flex-row gap-4 justify-center" data-taos-offset="400" data-taos-delay="600">
+        <a href="#contacto" class="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105">
+          <span class="relative z-10">Solicitar Demo</span>
+          <div class="absolute inset-0 rounded-full bg-gradient-to-r from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </a>
+        
+        <a href="#soluciones" class="px-8 py-4 border-2 border-purple-500 rounded-full text-white font-semibold hover:bg-purple-500/10 transition-all duration-300 transform hover:scale-105">
+          Ver Soluciones
+        </a>
+      </div>
+
+      <!-- Floating elements -->
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="float-animation bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all duration-1000 taos:opacity-0 taos:[transform:rotateY(180deg)]" data-taos-offset="300" data-taos-delay="800">
+          <div class="text-4xl mb-3">🎰</div>
+          <h3 class="text-xl font-semibold mb-2">5,000+ Juegos</h3>
+          <p class="text-gray-400">Slots, casino en vivo y más</p>
+        </div>
+
+        <div class="float-animation bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 hover:border-pink-500 transition-all duration-1000 taos:opacity-0 taos:translate-y-[200px]" data-taos-offset="300" data-taos-delay="1000">
+          <div class="text-4xl mb-3">🌎</div>
+          <h3 class="text-xl font-semibold mb-2">Licencias B2B & B2C</h3>
+          <p class="text-gray-400">Curazao y Anjouan</p>
+        </div>
+
+        <div class="float-animation bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 hover:border-blue-500 transition-all duration-1000 taos:opacity-0 taos:-translate-y-[200px]" data-taos-offset="300" data-taos-delay="1200">
+          <div class="text-4xl mb-3">🚀</div>
+          <h3 class="text-xl font-semibold mb-2">Soporte 24/7</h3>
+          <p class="text-gray-400">Asistencia técnica constante</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>
+
+<script>
+  // Parallax effect for background elements
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.parallax-bg');
+    
+    parallaxElements.forEach((element) => {
+      const speed = (element as HTMLElement).dataset.speed || '0.5';
+      const yPos = -(scrolled * parseFloat(speed));
+      (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
+    });
+  });
+</script>
