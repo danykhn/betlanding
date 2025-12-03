@@ -1,0 +1,32 @@
+---
+import SplineScene from './SplineScene.jsx';
+---
+
+<section class="relative w-full h-screen overflow-hidden bg-slate-950">
+  <!-- Spline 3D Scene Container -->
+  <div class="absolute inset-0">
+    <SplineScene client:load />
+  </div>
+  
+  <!-- Gradient overlays para mejor contraste -->
+  <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950/80 pointer-events-none"></div>
+  
+  <!-- Contenido opcional sobre la escena -->
+  <!-- <div class="relative z-10 h-full flex items-center justify-center">
+    <div class="text-center px-6 transition-all duration-1000 taos:opacity-0 taos:scale-[0.6]" data-taos-offset="400">
+      <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+        Innovación en 3D
+      </h2>
+      <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
+        Experimenta el futuro del igaming con tecnología de vanguardia
+      </p>
+    </div>
+  </div> -->
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+    <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
